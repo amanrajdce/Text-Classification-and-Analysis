@@ -60,3 +60,6 @@ Sentiment analysis
 <p align="center">
 <img src="images/sent_analyzer.PNG" alt="Drawing" style="width:40%;"/>
 </p>
+
+### Acknowledgement
+https://github.com/ravi3222/sentiment-analyzer007
