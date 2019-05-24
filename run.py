@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 from app import app
+import sys
 import os
   # needed for Heroku:
   # check if a port is defined in an env varibale (e.g. by Heroku)

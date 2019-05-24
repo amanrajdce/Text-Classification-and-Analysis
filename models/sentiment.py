@@ -25,8 +25,8 @@ def read_files(tarfname, vectorizer = 'BOW'):
             trainname = member.name
         elif 'dev.tsv' in member.name:
             devname = member.name
-            
-            
+
+
     class Data: pass
     sentiment = Data()
     print("-- train data")
@@ -49,7 +49,7 @@ def read_files(tarfname, vectorizer = 'BOW'):
         sentiment.count_vect = TfidfVectorizer(max_features = 200000, min_df = 1, max_df = 1.0, tokenizer = LemmaTokenizer(), sublinear_tf = False, ngram_range = (1, 3), stop_words = frozenset(['the', 'a', 'an', 'i', 'he', 'she', 'they', 'to', 'of', 'it', 'from']))
         sentiment.trainX = sentiment.count_vect.fit_transform(sentiment.train_data)
         sentiment.devX = sentiment.count_vect.transform(sentiment.dev_data)
-        print('yeet2') 
+        print('yeet2')
     from sklearn import preprocessing
     sentiment.le = preprocessing.LabelEncoder()
     sentiment.le.fit(sentiment.train_labels)
@@ -61,8 +61,8 @@ def read_files(tarfname, vectorizer = 'BOW'):
 
 import nltk
 #nltk.download('wordnet')
-from nltk import word_tokenize   
-from nltk.stem import WordNetLemmatizer 
+from nltk import word_tokenize
+from nltk.stem import WordNetLemmatizer
 class LemmaTokenizer(object):
     def __init__(self):
         self.wnl = WordNetLemmatizer()
@@ -83,20 +83,20 @@ def read_unlabeled(tarfname, sentiment):
     class Data: pass
     unlabeled = Data()
     unlabeled.data = []
-    
+
     unlabeledname = "unlabeled.tsv"
     for member in tar.getmembers():
         if 'unlabeled.tsv' in member.name:
             unlabeledname = member.name
-            
+
     print(unlabeledname)
     tf = tar.extractfile(unlabeledname)
     for line in tf:
         line = line.decode("utf-8")
         text = line.strip()
         unlabeled.data.append(text)
-        
-            
+
+
     unlabeled.X = sentiment.count_vect.transform(unlabeled.data)
     print(unlabeled.X.shape)
     tar.close()

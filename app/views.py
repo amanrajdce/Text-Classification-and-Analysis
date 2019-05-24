@@ -7,8 +7,19 @@ from flask import render_template, flash, request
 from .forms import InputTextForm
 from .nlp import TextAnalyser
 from .inputhandler import getSampleText
+import nltk
+import os
+nltk.download('wordnet')
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
+import sys
+sys.path.append('../models')
+from models.binary_classifier import BinaryClassifier
+cwd = os.getcwd()
 
+# setup binary classifier
+print("Setting up Binary classifier...")
+binary_clf = BinaryClassifier()
+print("Done!!Setting up Binary classifier")
 
 # Submit button in web for pressed
 @app.route('/', methods=['POST'])
@@ -29,7 +40,7 @@ def manageRequest():
     # DEBUG flash('read:  %s' % typeText)
 
     # Which kind of user action ?
-    if 'TA'  in request.form.values():
+    if 'TC'  in request.form.values():
             # GO Text Analysis
 
                # start analysing the text
@@ -62,6 +73,7 @@ def manageRequest():
                            commonWords = myText.getMostCommonWords(10))
 
     else:
+        binary_clf.predict_statistics(userText)
         sid = SentimentIntensityAnalyzer()
         scores = sid.polarity_scores(userText)
         if scores['compound'] > 0:
@@ -72,7 +84,11 @@ def manageRequest():
             sentiment='Neutral'
 
         return render_template('sentiment.html',
-                           title='Text Analysis',
+                           title='Sentiment Analysis',
+                           conf=cwd+'/graph/confidence.png',
+                           pos_word=cwd+'/graph/positive.png',
+                           neg_word=cwd+'/graph/negative.png',
+                           out_html=cwd+'/graph/binary_output.html',
                            sentiment_scores = scores,
                            sentiment=sentiment)
 
@@ -81,7 +97,7 @@ def manageRequest():
 @app.route('/', methods=['GET'])
 @app.route('/index', methods=['GET'])
 def initial():
-      # render the initial main page
+    # render the initial main page
     return render_template('index.html',
                            title = 'Text Classifier',
                            form = InputTextForm())
