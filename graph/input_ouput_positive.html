@@ -37088,25 +37088,25 @@
 /***/ })
 /******/ ]);
 //# sourceMappingURL=bundle.js.map </script></head><body>
-        <div class="lime top_div" id="top_divQCY3LJELSNMUNAS"></div>
+        <div class="lime top_div" id="top_divG09P4PRP0KSBUX1"></div>
         
         <script>
-        var top_div = d3.select('#top_divQCY3LJELSNMUNAS').classed('lime top_div', true);
+        var top_div = d3.select('#top_divG09P4PRP0KSBUX1').classed('lime top_div', true);
         
             var pp_div = top_div.append('div')
                                 .classed('lime predict_proba', true);
             var pp_svg = pp_div.append('svg').style('width', '100%');
-            var pp = new lime.PredictProba(pp_svg, ["negative", "positive"], [0.5037759765370753, 0.4962240234629247]);
+            var pp = new lime.PredictProba(pp_svg, ["negative", "positive"], [0.11996009546231712, 0.8800399045376829]);
             
         
         var exp_div;
             var exp = new lime.Explanation(["negative", "positive"]);
         
                 exp_div = top_div.append('div').classed('lime explanation', true);
-                exp.show([["shop", 0.19023394307858332], ["closed", -0.13692425601739078], ["and", 0.11235246893861282], ["my", 0.07388692040267304], ["Hours", -0.0693155917032379], ["miles", -0.06668525997787837], ["9pm", -0.039180589681895], ["wasting", -0.03271952064123439]], 1, exp_div);
+                exp.show([["is", 0.12041674261155426], ["ve", 0.1170330519811267], ["always", 0.10170981997926103], ["Hostess", -0.08058801299379373], ["Staff", 0.07235847071057107], ["my", 0.0684696014224774], ["polite", 0.05614383582151271], ["location", -0.04968438003865066]], 1, exp_div);
                 
         var raw_div = top_div.append('div');
-            exp.show_raw_text([["shop", 45, 0.19023394307858332], ["closed", 38, -0.13692425601739078], ["and", 26, 0.11235246893861282], ["and", 101, 0.11235246893861282], ["my", 93, 0.07388692040267304], ["Hours", 51, -0.0693155917032379], ["miles", 11, -0.06668525997787837], ["9pm", 66, -0.039180589681895], ["wasting", 85, -0.03271952064123439]], 1, "I drove 10 miles at 730pm and found a closed shop. Hours say till 9pm, so thanks for wasting my time and gas.", raw_div, true);
+            exp.show_raw_text([["is", 5, 0.12041674261155426], ["is", 98, 0.12041674261155426], ["ve", 111, 0.1170330519811267], ["always", 64, 0.10170981997926103], ["Hostess", 84, -0.08058801299379373], ["Staff", 92, 0.07235847071057107], ["my", 8, 0.0684696014224774], ["polite", 101, 0.05614383582151271], ["location", 42, -0.04968438003865066]], 1, "This is my third trip to the the Dilworth location. Service has always been superb. Hostess Staff is polite. I've never had the same burger twice, and everything has been", raw_div, true);
             
         </script>
         </body></html>
