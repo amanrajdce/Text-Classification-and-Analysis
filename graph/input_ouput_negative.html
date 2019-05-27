@@ -37088,25 +37088,25 @@
 /***/ })
 /******/ ]);
 //# sourceMappingURL=bundle.js.map </script></head><body>
-        <div class="lime top_div" id="top_div1L6OBFNA2XK1BUP"></div>
+        <div class="lime top_div" id="top_divBW4C67MHVF4SH09"></div>
         
         <script>
-        var top_div = d3.select('#top_div1L6OBFNA2XK1BUP').classed('lime top_div', true);
+        var top_div = d3.select('#top_divBW4C67MHVF4SH09').classed('lime top_div', true);
         
             var pp_div = top_div.append('div')
                                 .classed('lime predict_proba', true);
             var pp_svg = pp_div.append('svg').style('width', '100%');
-            var pp = new lime.PredictProba(pp_svg, ["negative", "positive"], [0.5037759765370753, 0.4962240234629247]);
+            var pp = new lime.PredictProba(pp_svg, ["negative", "positive"], [0.503933533558612, 0.49606646644138797]);
             
         
         var exp_div;
             var exp = new lime.Explanation(["negative", "positive"]);
         
                 exp_div = top_div.append('div').classed('lime explanation', true);
-                exp.show([["shop", 0.1843316899518785], ["closed", -0.13850419676840303], ["and", 0.11611735791636545], ["my", 0.07099353143337424], ["Hours", -0.06480197739653462], ["miles", -0.06365113634238459], ["9pm", -0.03923838282635557], ["wasting", -0.03210818675085631]], 1, exp_div);
+                exp.show([["shop", 0.18226659586178184], ["closed", -0.1360395160164243], ["and", 0.11213905029860449], ["my", 0.07575801368889226], ["Hours", -0.06813311705646267], ["miles", -0.06423726262615521], ["9pm", -0.0381601691529439], ["wasting", -0.032844325251801254]], 1, exp_div);
                 
         var raw_div = top_div.append('div');
-            exp.show_raw_text([["shop", 45, 0.1843316899518785], ["closed", 38, -0.13850419676840303], ["and", 26, 0.11611735791636545], ["and", 101, 0.11611735791636545], ["my", 93, 0.07099353143337424], ["Hours", 51, -0.06480197739653462], ["miles", 11, -0.06365113634238459], ["9pm", 66, -0.03923838282635557], ["wasting", 85, -0.03210818675085631]], 1, "I drove 10 miles at 730pm and found a closed shop. Hours say till 9pm, so thanks for wasting my time and gas.", raw_div, true);
+            exp.show_raw_text([["shop", 45, 0.18226659586178184], ["closed", 38, -0.1360395160164243], ["and", 26, 0.11213905029860449], ["and", 101, 0.11213905029860449], ["my", 93, 0.07575801368889226], ["Hours", 51, -0.06813311705646267], ["miles", 11, -0.06423726262615521], ["9pm", 66, -0.0381601691529439], ["wasting", 85, -0.032844325251801254]], 1, "I drove 10 miles at 730pm and found a closed shop. Hours say till 9pm, so thanks for wasting my time and gas.", raw_div, true);
             
         </script>
         </body></html>
