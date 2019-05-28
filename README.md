@@ -3,7 +3,7 @@
 A flask (Python) Web Interface for Text classification (NLP).
 
 <p align="center">
-<img src="images/home.png" alt="Drawing" style="width:0%;"/>
+<img src="images/home.PNG" alt="Drawing" style="width:0%;"/>
 </p>
 
 ## Key Features
