@@ -4,7 +4,7 @@
 {% block content %}
 
 <h1>Text Classification and Sentiment Analysis</h1>
-<p style = "margin-bottom:30px">
+<p style = "margin-bottom:30px;font-size:20px;font-weight:bold">
   CSE 256 Project Work<br /><br /></p>
 
   <form action="" method="post" name="inputText">
@@ -13,7 +13,7 @@
       {{ form.hidden_tag() }}
       <div style = font-size:20px; font-weight:bold; margin-left:150px;>
 
-        <p>
+        <p style = font-size:30px;>
           You can enter your text here:<br />
           {{ form.inputText(size=400, placeholder="Write something ...") }}<br />
 
@@ -24,10 +24,10 @@
     </fieldset>
 
     <fieldset>
-      <legend>Analysis available</legend>
+      <legend >Analysis available</legend>
         <nav>
-          <button class="btn btn-success" name="action-button" type="submit" value="TC" style="height: 100px; width: 400px; left: 250; top: 250;background-color:deepskyblue;color:white;font-size : 20px;">Text Classification</button>
-          <button class="btn btn-success" type="submit" value="SA" style="background-color:orange;color:white;height: 100px; width: 400px; left: 250; top: 250;font-size : 20">Sentiment Analysis</button>
+          <button class="btn btn-success" name="action-button" type="submit" value="TC" style="height: 100px; width: 400px; left: 250; top: 250;background-color:deepskyblue;color:white;font-size : 40px;">Text Classification</button>
+          <button class="btn btn-success" type="submit" value="SA" style="background-color:orange;color:white;height: 100px; width: 400px; left: 250; top: 250;font-size : 40">Sentiment Analysis</button>
         </nav>
 
       </div>

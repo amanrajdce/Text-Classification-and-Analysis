@@ -1,9 +1,10 @@
 body            { font-family: 'Verdana', serif; background: #ffddba; background-image: url(../static/img/2.jpg); background-size: cover; -moz-background-size: cover; -o-background-size: cover; -webkit-background-size: cover }
-h1              { color: orangered; border-bottom: 2px solid #eee}
+h1              { color: orangered; border-bottom: 2px solid #000; text-align: center; overflow: hidden;}
 
 textarea {
-  width: 700px;
-  height: 250px;
+  width: 1400px;
+  height: 275px;
+  font-size: 28px;
 }
 
 
