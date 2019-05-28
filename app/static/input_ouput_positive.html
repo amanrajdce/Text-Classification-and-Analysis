@@ -37088,25 +37088,25 @@
 /***/ })
 /******/ ]);
 //# sourceMappingURL=bundle.js.map </script></head><body>
-        <div class="lime top_div" id="top_divOAT86JQYP5VQ9AI"></div>
+        <div class="lime top_div" id="top_divK8VEAMSJVOJBVX7"></div>
         
         <script>
-        var top_div = d3.select('#top_divOAT86JQYP5VQ9AI').classed('lime top_div', true);
+        var top_div = d3.select('#top_divK8VEAMSJVOJBVX7').classed('lime top_div', true);
         
             var pp_div = top_div.append('div')
                                 .classed('lime predict_proba', true);
             var pp_svg = pp_div.append('svg').style('width', '100%');
-            var pp = new lime.PredictProba(pp_svg, ["sport", "tech", "business", "politics", "entertainment"], [0.31316317283476836, 0.09086007428725387, 0.2937853296702188, 0.10244764483629999, 0.199743778371459]);
+            var pp = new lime.PredictProba(pp_svg, ["negative", "positive"], [0.11994951765520656, 0.8800504823447934]);
             
         
         var exp_div;
-            var exp = new lime.Explanation(["sport", "tech", "business", "politics", "entertainment"]);
+            var exp = new lime.Explanation(["negative", "positive"]);
         
                 exp_div = top_div.append('div').classed('lime explanation', true);
-                exp.show([["hi", 5.304925361325586e-32]], 0, exp_div);
+                exp.show([["is", 0.11937490883081626], ["ve", 0.10321144182700549], ["always", 0.09881846677554723], ["Hostess", -0.07866622985290804], ["Staff", 0.07223630924345328], ["my", 0.06597283750096718], ["polite", 0.05860114527126436], ["location", -0.0502513758828515]], 1, exp_div);
                 
         var raw_div = top_div.append('div');
-            exp.show_raw_text([["hi", 0, 5.304925361325586e-32]], 0, "hi", raw_div, true);
+            exp.show_raw_text([["is", 5, 0.11937490883081626], ["is", 98, 0.11937490883081626], ["ve", 111, 0.10321144182700549], ["always", 64, 0.09881846677554723], ["Hostess", 84, -0.07866622985290804], ["Staff", 92, 0.07223630924345328], ["my", 8, 0.06597283750096718], ["polite", 101, 0.05860114527126436], ["location", 42, -0.0502513758828515]], 1, "This is my third trip to the the Dilworth location. Service has always been superb. Hostess Staff is polite. I've never had the same burger twice, and everything has been", raw_div, true);
             
         </script>
         </body></html>
