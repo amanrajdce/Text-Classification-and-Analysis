@@ -3,21 +3,17 @@
 A flask (Python) Web Interface for Text classification (NLP).
 
 <p align="center">
-<img src="images/home.PNG" alt="Drawing" style="width:0%;"/>
+<img src="images/home.png" alt="Drawing" style="width:0%;"/>
 </p>
 
 ## Key Features
 There are two main features
 
-#### Basic Analysis
-* Tokenise a text
-* Remove stop words (English, German, Italian dictionaries)
-* Pre-process text (remove punctuation, lower case)
-* Extract top words
+#### Text Classification
+* Update it ..
 
 #### Sentiment Analysis
-* Shows if the text content is positive, neutral, negative
-* Score for each sentiment
+* Update it ..
 
 
 ### Prerequisites
@@ -49,16 +45,16 @@ Server will start and  you can connect by opening the web browser and connecting
     http://localhost:5000/index
 
 ### More Screenshots
-Basic Analysis
+Text Classification Analysis
 
 <p align="center">
-<img src="images/basic_analyzer.PNG" alt="Drawing" style="width:40%;"/>
+<img src="images/bbc.png" alt="Drawing" style="width:40%;"/>
 </p>
 
-Sentiment analysis
+Sentiment Analysis
 
 <p align="center">
-<img src="images/sent_analyzer.PNG" alt="Drawing" style="width:40%;"/>
+<img src="images/sentiment.png" alt="Drawing" style="width:40%;"/>
 </p>
 
 ### Acknowledgement

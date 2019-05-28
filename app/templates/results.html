@@ -6,42 +6,22 @@
 {% endblock %}
 
 {% block content %}
-  <h1>Basic Analysis</h1>
+  <h1>Text Classification</h1>
 
   <div>
-    <p>Analysis report</p>
-    <img src="../static/confidence.png" width="400" height="400" hspace="25"></img>
-    <img src="../static/sport.png" width="400" height="400" hspace="25"></img>
-    <img src="../static/tech.png" width="400" height="400" hspace="25"></img>
-    <img src="../static/politics.png" width="400" height="400" hspace="25"></img>
-    <img src="../static/entertainment.png" width="400" height="400" hspace="25"></img>
-    <img src="../static/business.png" width="400" height="400" hspace="25"></img>
-    <p> Input 1: Technology: </p> 
-    <iframe src="../static/input_ouput_tech.html" width="1200" height="300" hspace="25" align="center"></iframe>
-    <p>Input 2: Sports: </p>
-    <iframe src="../static/input_ouput_sport.html" width="1200" height="300" hspace="25" align="center" ></iframe>
-    <p>Input 3: Entertainment: </p>
-    <iframe src="../static/input_ouput_entertainment.html" width="1200" height="300" hspace="25" align="center" ></iframe>
-    <p>Input 4: Politics</p>
-    <iframe src="../static/input_ouput_politics.html" width="1200" height="300" hspace="25" align="center" ></iframe>
-    <p>Input 5: Technology</p>
-    <iframe src="../static/input_ouput_business.html" width="1200" height="300" hspace="25" align="center" ></iframe>
+    <h2>Analysis on trained BBC dataset:</h2>
+    <img src="../static/tcgraphs/confidence.png" width="400" height="400" hspace="25"></img>
+    <img src="../static/tcgraphs/sport.png" width="400" height="400" hspace="25"></img>
+    <img src="../static/tcgraphs/tech.png" width="400" height="400" hspace="25"></img>
+    <img src="../static/tcgraphs/politics.png" width="400" height="400" hspace="25"></img>
+    <img src="../static/tcgraphs/entertainment.png" width="400" height="400" hspace="25"></img>
+    <img src="../static/tcgraphs/business.png" width="400" height="400" hspace="25"></img>
+    </div>
 
-  </div>
-
-  <h2>{{ inputTypeText }}</h2>
-  <p>
-          {{ originalText }}
-  </p>
   <hr>
-    <h2>Main statistics:</h2>
-    <p>Total characters:  <span class="stats">   {{ numChars }}</span> (include spaces)</p>
-    <p>Total sentences:  <span class="stats">  {{ numSentences }} </span> </p>
-    <p>Total tokens:  <span class="stats">  {{ numTokens }} </span> </p>
-    <p>Unique tokens: <span class="stats"> {{ uniqueTokens }} </span></p>
-    <p>Lexical diversity: each token in average is repeated {{ numTokens / uniqueTokens }} times</p>
-    <p>Top 10 words: {{ commonWords }} </p>
-      <svg class="chart"></svg>
+    <h2>Analysis on input text:</h2>
+    <iframe src="../static/tcgraphs/tc_output.html" width="1200" height="300" hspace="25" align="center"></iframe>
+
 
   <script>
 

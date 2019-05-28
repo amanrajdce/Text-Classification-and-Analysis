@@ -9,15 +9,10 @@
   <h1>Sentiment Analysis</h1>
 
   <div>
-    <p>Analysis report</p>
-    <img src="../static/confidence.png" width="400" height="400" hspace="25"></img>
-    <img src="../static/negative.png" width="400" height="400" hspace="25"></img>
-    <img src="../static/positive.png" width="400" height="400" hspace="25"></img>
-    <p>Positive Input</p> 
-    <iframe src="../static/input_ouput_positive.html" width="1200" height="300" hspace="25" align="center"></iframe>
-    <p>Negative Input</p>
-    <iframe src="../static/input_ouput_negative.html" width="1200" height="300" hspace="25" align="center" ></iframe>
-
+    <h2>Analysis on trained review dataset:</h2>
+    <img src="../static/bgraphs/confidence.png" width="400" height="400" hspace="25"></img>
+    <img src="../static/bgraphs/negative.png" width="400" height="400" hspace="25"></img>
+    <img src="../static/bgraphs/positive.png" width="400" height="400" hspace="25"></img>
   </div>
 
   <h2>{{ inputTypeText }}</h2>
@@ -25,12 +20,8 @@
           {{ originalText }}
   </p>
   <hr>
-    <h2>Main statistics:</h2>
-    <p>Overall Sentiment:  <span class="stats">   {{sentiment}}</span> </p>
-    <p>Positive Score:  <span class="stats">   {{ sentiment_scores['pos'] }}</span> (include spaces)</p>
-    <p>Neutral Score:    <span class="stats">  {{ sentiment_scores['neu'] }} </span> </p>
-    <p>Negative Score:  <span class="stats">  {{ sentiment_scores['neg'] }} </span> </p>
-      <svg class="chart"></svg>
+    <h2>Analysis on input text:</h2>
+    <iframe src="../static/bgraphs/binary_output.html" width="1200" height="300" hspace="25" align="center"></iframe>
 
   <script>
 

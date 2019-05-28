@@ -1,25 +1,27 @@
 """
 Routing module
-
 """
 from app import app
 from flask import render_template, flash, request
 from .forms import InputTextForm
-from .nlp import TextAnalyser
-from .inputhandler import getSampleText
 import nltk
 import os
 nltk.download('wordnet')
-from nltk.sentiment.vader import SentimentIntensityAnalyzer
 import sys
 sys.path.append('../models')
 from models.binary_classifier import BinaryClassifier
+from models.bbc_classifier import BBCClassifier
 cwd = os.getcwd()
 
 # setup binary classifier
 print("Setting up Binary classifier...")
 binary_clf = BinaryClassifier()
 print("Done!!Setting up Binary classifier")
+
+# setup binary classifier
+print("Setting up BBC classifier...")
+bbc_clf = BBCClassifier()
+print("Done!!Setting up BBC classifier")
 
 # Submit button in web for pressed
 @app.route('/', methods=['POST'])
@@ -41,56 +43,12 @@ def manageRequest():
 
     # Which kind of user action ?
     if 'TC'  in request.form.values():
-            # GO Text Analysis
-
-               # start analysing the text
-        myText = TextAnalyser(userText, language) # new object
-
-        myText.preprocessText(lowercase = theInputForm.ignoreCase.data,
-                              removeStopWords = theInputForm.ignoreStopWords.data)
-
-               # display all user text if short otherwise the first fragment of it
-        if len(userText) > 99:
-            fragment = userText[:99] + " ..."
-        else:
-            fragment = userText
-
-              # check that there is at least one unique token to avoid division by 0
-        if myText.uniqueTokens() == 0:
-            uniqueTokensText = 1
-        else:
-            uniqueTokensText = myText.uniqueTokens()
-
-              # render the html page
-        return render_template('results.html',
-                           title='Text Analysis',
-                           inputTypeText = typeText,
-                           originalText = fragment,
-                           numChars = myText.length(),
-                           numSentences = myText.getSentences(),
-                           numTokens = myText.getTokens(),
-                           uniqueTokens = uniqueTokensText,
-                           commonWords = myText.getMostCommonWords(10))
+        bbc_clf.predict_statistics(userText)
+        return render_template('results.html')
 
     else:
         binary_clf.predict_statistics(userText)
-        sid = SentimentIntensityAnalyzer()
-        scores = sid.polarity_scores(userText)
-        if scores['compound'] > 0:
-            sentiment='Positive'
-        elif scores['compound']< 0:
-            sentiment='Negative'
-        else:
-            sentiment='Neutral'
-
-        return render_template('sentiment.html',
-                           title='Sentiment Analysis',
-                           conf=cwd+'/graph/confidence.png',
-                           pos_word=cwd+'/graph/positive.png',
-                           neg_word=cwd+'/graph/negative.png',
-                           out_html=cwd+'/graph/binary_output.html',
-                           sentiment_scores = scores,
-                           sentiment=sentiment)
+        return render_template('sentiment.html')
 
 
   # render web form page
