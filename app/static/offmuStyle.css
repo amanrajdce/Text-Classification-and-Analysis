@@ -1,8 +1,8 @@
-body            { font-family: sans-serif; background: #eee; }
-h1              { color: green; border-bottom: 2px solid #eee}
+body            { font-family: 'Verdana', serif; background: #ffddba; background-image: url(../static/img/2.jpg); background-size: cover; -moz-background-size: cover; -o-background-size: cover; -webkit-background-size: cover }
+h1              { color: orangered; border-bottom: 2px solid #eee}
 
 textarea {
-  width: 500px;
+  width: 700px;
   height: 250px;
 }
 
