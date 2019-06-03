@@ -78,7 +78,7 @@ class BinaryClassifier(object):
 
 
     def generate_conf_plots(self):
-        CONF_TH=0.8
+        CONF_TH=0.9
         self.find_correct_incorrect(
             self.dev_prob, self.dev_pred, self.sentiment.devy, CONF_TH
         )
