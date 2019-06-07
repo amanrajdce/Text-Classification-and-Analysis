@@ -30,7 +30,7 @@ To clone and run this application, you'll need Git.
 
 
     # Open the folder and Install dependencies
-    $ pip install requirements.txt
+    $ pip install -r requirements.txt
 
 
 ## Start Service
