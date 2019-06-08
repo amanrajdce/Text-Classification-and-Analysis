@@ -10,10 +10,8 @@ A flask (Python) Web Interface for Text classification (NLP).
 There are two main features
 
 #### Text Classification
-* Update it ..
 
 #### Sentiment Analysis
-* Update it ..
 
 
 ### Prerequisites
